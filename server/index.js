@@ -4,7 +4,7 @@ const path = require("path");
 
 const puppeteer = require("puppeteer");
 
-app.listen(process.env.PORT || 5001, function () {});
+app.listen(process.env.PORT || 5001);
 
 app.use((req, res, next) => {
   res.append("Cache-Control", "123123123123");
@@ -28,7 +28,6 @@ async function ssr(url) {
   await page.goto(url);
 
   const html = await page.content();
-  console.log(html);
   await browser.close();
 
   RENDER_CACHE.set(url, html);
