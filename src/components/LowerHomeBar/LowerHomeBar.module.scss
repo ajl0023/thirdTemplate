@@ -25,18 +25,21 @@ $b: 1.5em;
   padding-top: 6rem;
   .text-container {
     margin: 0 auto;
-    max-width: 23em;
+    max-width: 28em;
   }
   * {
     max-width: 100%;
   }
   p {
     font-size: 1rem;
+    text-align: center;
     margin-bottom: 3rem;
   }
   h5 {
     margin-bottom: 3rem;
-    font-size: 1.1rem;
+    font-size: 2.1rem;
+    white-space: nowrap;
+    text-align: center;
   }
 }
 .logo-container {
@@ -44,5 +47,5 @@ $b: 1.5em;
     width: 100%;
     fill: white;
   }
-  max-width: 5rem;
+  max-width: 12rem;
 }

@@ -8,7 +8,7 @@ const VideoRender = () => {
         <h4>Video Render</h4>
         <iframe
           width="100%"
-          height="500px"
+          height="100%"
           src="https://www.youtube.com/embed/iWGFuMg-RA0?enablejsapi=1&version=3&playerapiid=ytplayer"
           title="YouTube video player"
           id="main-video-player"

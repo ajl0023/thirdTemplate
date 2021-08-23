@@ -2,6 +2,8 @@
 import styles from "./Discover.module.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import leftArrow from "./arrows/Arrow Left.png";
+import rightArrow from "./arrows/Arrow Right.png";
 const texts = [
   <div>
     <h4>Discover</h4>
@@ -88,6 +90,7 @@ const Discover = (props) => {
   return (
     <div id={links[props.index]} className={styles["discover-wrapper"]}>
       <div
+        name="page-content"
         style={{ justifyContent: props.rev ? "flex-start" : "" }}
         className={styles["container"]}
       >
@@ -103,7 +106,35 @@ const Discover = (props) => {
           <div className={styles["gallery-container"]}>
             {/* <img className="splide-image" src={renders[props.index].default} alt="" /> */}
 
-            <Carousel width="100%" showThumbs={false}>
+            <Carousel
+              renderArrowPrev={(onClickHandler, hasPrev, label) => {
+                console.log(hasPrev, 123123);
+                return (
+                  <button
+                    className={`${styles["arrow-left"]} ${
+                      styles[`arrow-left-${props.index}`]
+                    } `}
+                    type="button"
+                    onClick={onClickHandler}
+                  >
+                    <img src={leftArrow} alt="" />
+                  </button>
+                );
+              }}
+              renderArrowNext={(onClickHandler, hasNext, label) => (
+                <button
+                  className={`${styles["arrow-right"]} ${
+                    styles[`arrow-right-${props.index}`]
+                  } `}
+                  type="button"
+                  onClick={onClickHandler}
+                >
+                  <img src={rightArrow} alt="" />
+                </button>
+              )}
+              width="100%"
+              showThumbs={false}
+            >
               {props.index === 0
                 ? renders.map((img, i) => {
                     return (
