@@ -1,1 +1,1 @@
-npm run build &&  git add . && git commit -m "nav hover scale" && git push origin gh-pages
+git add . && git commit -m "server side rendering now" && git push origin gh-pages
