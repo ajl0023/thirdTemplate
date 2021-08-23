@@ -4,6 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import leftArrow from "./arrows/Arrow Left.png";
 import rightArrow from "./arrows/Arrow Right.png";
+import imageCompression from "browser-image-compression";
+
 const texts = [
   <div>
     <h4>Discover</h4>
@@ -84,6 +86,31 @@ const renders2 = Object.keys(cache2).map((name) => {
   console.log(name);
   return cache2[name];
 });
+console.log(renders[0]);
+async function handleImageUpload(event) {
+  console.log(
+    "originalFile instanceof Blob",
+    renders[0].default instanceof Blob
+  ); // true
+  console.log(`originalFile size ${renders[0].default.size / 1024 / 1024} MB`);
+
+  const options = {
+    maxSizeMB: 1,
+    maxWidthOrHeight: 1920,
+    useWebWorker: true,
+  };
+  try {
+    const compressedFile = await imageCompression(renders[0].default, options);
+    console.log(
+      "compressedFile instanceof Blob",
+      compressedFile instanceof Blob
+    ); // true
+    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
+  } catch (error) {
+    console.log(error);
+  }
+}
+handleImageUpload();
 const links = ["discover", "background", "equest"];
 const Discover = (props) => {
   useEffect(() => {}, []);
