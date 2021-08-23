@@ -1,0 +1,48 @@
+$b: 1.5em;
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &::before {
+    content: "";
+    height: 30px;
+    width: 100%;
+    top: -10px;
+    z-index: 2000;
+    left: 0;
+    filter: blur(0.3rem);
+    background-color: black;
+    position: absolute;
+  }
+  background: #000;
+
+  width: 100%;
+  color: white;
+
+  text-align: center;
+  padding: 50px;
+  padding-top: 6rem;
+  .text-container {
+    margin: 0 auto;
+    max-width: 23em;
+  }
+  * {
+    max-width: 100%;
+  }
+  p {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+  h5 {
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
+}
+.logo-container {
+  .logo {
+    width: 100%;
+    fill: white;
+  }
+  max-width: 5rem;
+}
