@@ -3,7 +3,7 @@ import styles from "./VideoRender.module.scss";
 
 const VideoRender = () => {
   return (
-    <div className={styles["container"]}>
+    <div id="video" className={styles["container"]}>
       <div className={styles["content-container"]}>
         <h4>Video Render</h4>
         <iframe

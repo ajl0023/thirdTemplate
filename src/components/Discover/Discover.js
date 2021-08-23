@@ -82,11 +82,11 @@ const renders2 = Object.keys(cache2).map((name) => {
   console.log(name);
   return cache2[name];
 });
-console.log(cache2);
+const links = ["discover", "background", "equest"];
 const Discover = (props) => {
   useEffect(() => {}, []);
   return (
-    <div className={styles["discover-wrapper"]}>
+    <div id={links[props.index]} className={styles["discover-wrapper"]}>
       <div
         style={{ justifyContent: props.rev ? "flex-start" : "" }}
         className={styles["container"]}
@@ -99,9 +99,7 @@ const Discover = (props) => {
           }}
           className={styles["content-container"]}
         >
-          <div className={styles["text-container"]}>
-              {texts[props.index]}
-          </div>
+          <div className={styles["text-container"]}>{texts[props.index]}</div>
           <div className={styles["gallery-container"]}>
             {/* <img className="splide-image" src={renders[props.index].default} alt="" /> */}
 

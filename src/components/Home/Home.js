@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./Home.module.scss";
 import home from "./images/background.jpg";
 import logo from "./images/Maliview Estates (757 x 79).png";
-
+const links = ["discover", "background", "equest", "video"];
 const Home = () => {
   return (
     <div className={styles["container"]}>
       <ul className={styles["home-content-bar"]}>
-        <li>Discover</li>
-        <li>Equestrian</li>
+        <a href={`#${links[0]}`}>Discover</a>
+        <a href={`#${links[1]}`}>Equestrian</a>
       </ul>
 
       <div className={styles["logo-container"]}>
@@ -16,10 +16,9 @@ const Home = () => {
       </div>
 
       <ul className={styles["home-content-bar"]}>
-        <li>Background</li>
-        <li>Video</li>
+        <a href={`#${links[2]}`}>Background</a>
+        <a href={`#${links[3]}`}>Video</a>
       </ul>
- 
     </div>
   );
 };
