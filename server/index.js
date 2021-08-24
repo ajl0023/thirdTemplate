@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const SaveToExistingDirectoryPlugin = require("website-scraper-existing-directory");
 
 const puppeteer = require("puppeteer");
+
+// or with callback
 
 app.listen(process.env.PORT || 5001);
 
@@ -36,11 +39,6 @@ async function ssr(url) {
 }
 
 app.use(
-  express.static(path.join(__dirname, "../build"), {
-    index: false,
-  })
+  express.static(path.join(__dirname, "./build"), {})
 );
-app.get("/", async (req, res) => {
-  const test = await ssr(`${req.protocol}://${req.get("host")}/index.html`);
-  res.send(test);
-});
+app.get("/", async (req, res) => {});

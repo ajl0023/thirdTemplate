@@ -1,1 +1,1 @@
-git add . && git commit -m "server side rendering now" && git push origin gh-pages
+git add . && git commit -m "moved to gatsby" && git push origin gh-pages

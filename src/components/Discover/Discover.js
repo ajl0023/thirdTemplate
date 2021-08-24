@@ -83,34 +83,9 @@ const renders = Object.keys(cache).map((name) => {
   return cache[name];
 });
 const renders2 = Object.keys(cache2).map((name) => {
-  console.log(name);
   return cache2[name];
 });
-console.log(renders[0]);
-async function handleImageUpload(event) {
-  console.log(
-    "originalFile instanceof Blob",
-    renders[0].default instanceof Blob
-  ); // true
-  console.log(`originalFile size ${renders[0].default.size / 1024 / 1024} MB`);
 
-  const options = {
-    maxSizeMB: 1,
-    maxWidthOrHeight: 1920,
-    useWebWorker: true,
-  };
-  try {
-    const compressedFile = await imageCompression(renders[0].default, options);
-    console.log(
-      "compressedFile instanceof Blob",
-      compressedFile instanceof Blob
-    ); // true
-    console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
-  } catch (error) {
-    console.log(error);
-  }
-}
-handleImageUpload();
 const links = ["discover", "background", "equest"];
 const Discover = (props) => {
   useEffect(() => {}, []);
@@ -118,13 +93,13 @@ const Discover = (props) => {
     <div id={links[props.index]} className={styles["discover-wrapper"]}>
       <div
         name="page-content"
-        style={{ justifyContent: props.rev ? "flex-start" : "" }}
+        style={{ justifyContent: props.rev ? "flex-start" : "test" }}
         className={styles["container"]}
       >
         <div
           style={{
-            flexDirection: props.index % 2 > 0 ? "row-reverse" : "",
-            backgroundColor: props.index % 2 ? "black" : "",
+            flexDirection: props.index % 2 > 0 ? "row-reverse" : "test",
+            backgroundColor: props.index % 2 ? "black" : "test",
             color: props.index % 2 ? "white" : "black",
           }}
           className={styles["content-container"]}
@@ -135,7 +110,6 @@ const Discover = (props) => {
 
             <Carousel
               renderArrowPrev={(onClickHandler, hasPrev, label) => {
-                console.log(hasPrev, 123123);
                 return (
                   <button
                     className={`${styles["arrow-left"]} ${
