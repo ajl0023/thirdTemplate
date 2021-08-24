@@ -1,1 +1,1 @@
-git add . && git commit -m "added video page" && git push origin gh-pages
+git add . && git commit -m "rearranged elements" && git push origin gh-pages
