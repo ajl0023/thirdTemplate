@@ -1,1 +1,1 @@
-git add . && git commit -m "moved to gatsby" && git push origin gh-pages
+git add . && git commit -m "added video page" && git push origin gh-pages
